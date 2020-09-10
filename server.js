@@ -6,6 +6,11 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+const getMatches = () =>{
+  const result = axios.get('https://res.cloudinary.com/jatinchutani/raw/upload/v1599757308/data.json');
+  return result.then(res => res.data);
+}
+
 const itContains = (key, obj) =>{
   if(obj[key]){
     obj[key]++;
@@ -109,7 +114,7 @@ app.get('/cities', (req, res) =>{
   res.json(cities);
 })
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, ()=>{
   console.log(`Server running at ${PORT}`);
 })
