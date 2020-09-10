@@ -1,7 +1,10 @@
 const express = require('express');
 const axios = require('axios');
 const matches = require('./data.json');
+const cors = require('cors');
+
 const app = express();
+app.use(cors());
 
 const itContains = (key, obj) =>{
   if(obj[key]){
