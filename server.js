@@ -6,6 +6,7 @@ const facts = require('./facts.json');
 
 const app = express();
 app.use(cors());
+app.use(express.static('build'));
 
 const itContains = (key, obj) =>{
   if(obj[key]){
