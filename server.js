@@ -19,7 +19,7 @@ const itContains = (key, obj) =>{
 
 let years = {};
 
-app.get('/years', (req, res) =>{
+app.get('/api/years', (req, res) =>{
   if(Object.keys(years).length > 0){
     res.json(years);
   }
