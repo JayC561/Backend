@@ -33,7 +33,7 @@ app.get('/years', (req, res) =>{
 
 let tieMatches;
 let tieYears = {};
-app.get('/tie', (req, res) =>{
+app.get('/api/tie', (req, res) =>{
   if(Object.keys(tieYears).length > 0){
     return res.json(tieYears);
   }
@@ -49,7 +49,7 @@ app.get('/tie', (req, res) =>{
 })
 
 let stadium = {};
-app.get('/venue', (req, res) =>{
+app.get('/api/venue', (req, res) =>{
   if(Object.keys(stadium).length > 0){
     return res.json(stadium);
   }
@@ -60,7 +60,7 @@ app.get('/venue', (req, res) =>{
 })
 
 let manOfMatch = {};
-app.get('/manofmatch', (req, res) =>{
+app.get('/api/manofmatch', (req, res) =>{
   if(Object.keys(manOfMatch).length > 0){
     return res.json(manOfMatch);
   }
@@ -71,7 +71,7 @@ app.get('/manofmatch', (req, res) =>{
 })
 
 let interruptedMatches = [];
-app.get('/interruption', (req, res) =>{
+app.get('/api/interruption', (req, res) =>{
   if(interruptedMatches.length > 0){
     return res.json(interruptedMatches);
   }
@@ -84,7 +84,7 @@ app.get('/interruption', (req, res) =>{
 })
 
 let totalWins = {};
-app.get('/winners', (req, res) =>{
+app.get('/api/winners', (req, res) =>{
   if(Object.keys(totalWins).length > 0){
     return res.json(totalWins);
   }
@@ -101,7 +101,7 @@ app.get('/winners', (req, res) =>{
 })
 
 let cities = {};
-app.get('/cities', (req, res) =>{
+app.get('/api/cities', (req, res) =>{
   if(Object.keys(cities).length > 0){
     return res.json(cities);
   }
@@ -111,7 +111,7 @@ app.get('/cities', (req, res) =>{
   res.json(cities);
 })
 
-app.get('/facts', (req, res) =>{
+app.get('/api/facts', (req, res) =>{
   res.json(facts);
 })
 
