@@ -2,14 +2,10 @@ const express = require('express');
 const axios = require('axios');
 const matches = require('./data.json');
 const cors = require('cors');
+const facts = require('./facts.json');
 
 const app = express();
 app.use(cors());
-
-const getMatches = () =>{
-  const result = axios.get('https://res.cloudinary.com/jatinchutani/raw/upload/v1599757308/data.json');
-  return result.then(res => res.data);
-}
 
 const itContains = (key, obj) =>{
   if(obj[key]){
@@ -112,6 +108,10 @@ app.get('/cities', (req, res) =>{
     itContains(city, cities);
   })
   res.json(cities);
+})
+
+app.get('/facts', (req, res) =>{
+  res.json(facts);
 })
 
 const PORT = process.env.PORT || 3001;
